@@ -12,10 +12,6 @@ def browser(request):
     # Получаем язык из командной строки
     user_language = request.config.getoption("language")
 
-    # Если параметр забыли указать, выбрасываем ошибку для корректности
-    if user_language is None:
-        raise pytest.UsageError("--language option is required! (e.g. --language=es)")
-
     print(f"\nЗапуск Chrome с локализацией: {user_language}...")
 
     # Настраиваем параметры локализации для Chrome
